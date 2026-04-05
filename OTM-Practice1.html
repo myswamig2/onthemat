@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Off The Mat Series | Iyawo Consultation Practice Scenarios</title>
+  <meta name="description" content="Off The Mat Consultation Practice Scenarios training page." />
+  <meta name="theme-color" content="#0b0b12" />
+  <style>
+    :root{
+      --bg:#08090d;
+      --bg2:#10141a;
+      --panel:#131922;
+      --panel2:#19222c;
+      --text:#f5f2ea;
+      --muted:#cbc2b3;
+      --gold:#c8a75b;
+      --gold2:#efd49b;
+      --bronze:#8c6a3b;
+      --deep:#20313a;
+      --blue:#5f88a6;
+      --line:rgba(255,255,255,.08);
+      --glow:0 0 0 1px rgba(200,167,91,.22), 0 0 22px rgba(95,136,166,.14);
+      --shadow:0 14px 40px rgba(0,0,0,.34);
+      --radius:20px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Georgia, "Times New Roman", serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(95,136,166,.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(200,167,91,.10), transparent 24%),
+        linear-gradient(180deg, #07080b 0%, #0c1016 46%, #090b10 100%);
+      line-height:1.65;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .wrap{
+      width:min(1180px, 92%);
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter: blur(12px);
+      background:rgba(8,10,14,.82);
+      border-bottom:1px solid var(--line);
+    }
+
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:12px 0;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .brand-logo{
+      width:58px;
+      height:58px;
+      border-radius:14px;
+      overflow:hidden;
+      background:#000;
+      box-shadow:var(--glow);
+      flex:0 0 auto;
+    }
+
+    .brand-text h1{
+      margin:0;
+      font-size:1.15rem;
+      letter-spacing:.3px;
+      color:var(--gold2);
+    }
+
+    .brand-text p{
+      margin:2px 0 0;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .pill{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(200,167,91,.24);
+      background:linear-gradient(180deg, rgba(95,136,166,.18), rgba(255,255,255,.03));
+      color:#fff;
+      font-size:.9rem;
+      box-shadow:var(--glow);
+      transition:.25s ease;
+      white-space:nowrap;
+    }
+
+    .pill:hover{
+      transform:translateY(-2px);
+      border-color:rgba(239,212,155,.52);
+      color:var(--gold2);
+    }
+
+    .hero{
+      padding:46px 0 26px;
+    }
+
+    .hero-card{
+      background:
+        linear-gradient(135deg, rgba(95,136,166,.18), rgba(200,167,91,.10)),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(200,167,91,.18);
+      border-radius:28px;
+      box-shadow:var(--shadow), var(--glow);
+      overflow:hidden;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.35fr .85fr;
+      gap:24px;
+      padding:34px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      background:rgba(200,167,91,.10);
+      border:1px solid rgba(200,167,91,.22);
+      color:var(--gold2);
+      font-size:.8rem;
+      letter-spacing:.9px;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .hero h2{
+      margin:0 0 12px;
+      font-size:clamp(2rem, 4vw, 3.25rem);
+      line-height:1.08;
+      color:#fff;
+    }
+
+    .hero h2 .accent{color:var(--gold2)}
+    .hero p{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:1.03rem;
+      max-width:760px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 18px;
+      border-radius:14px;
+      border:1px solid transparent;
+      font-weight:700;
+      transition:.25s ease;
+      cursor:pointer;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    .btn-primary{
+      background:linear-gradient(180deg, var(--gold2), var(--gold));
+      color:#1a1406;
+      box-shadow:0 10px 24px rgba(200,167,91,.20);
+    }
+
+    .btn-primary:hover{transform:translateY(-2px)}
+
+    .btn-ghost{
+      background:rgba(255,255,255,.04);
+      border-color:rgba(255,255,255,.12);
+      color:#fff;
+    }
+
+    .btn-ghost:hover{
+      border-color:rgba(239,212,155,.42);
+      color:var(--gold2);
+      transform:translateY(-2px);
+    }
+
+    .hero-side{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:22px;
+      padding:22px;
+      align-self:stretch;
+    }
+
+    .hero-side h3{
+      margin:0 0 12px;
+      color:var(--gold2);
+      font-size:1.06rem;
+    }
+
+    .hero-side ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .hero-side li{margin:0 0 10px}
+
+    section{
+      padding:18px 0 22px;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+      flex-wrap:wrap;
+    }
+
+    .section-head h3{
+      margin:0;
+      font-size:1.72rem;
+      color:#fff;
+    }
+
+    .section-head p{
+      margin:6px 0 0;
+      color:var(--muted);
+      max-width:760px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:18px;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
+    .card h4{
+      margin:0 0 10px;
+      color:var(--gold2);
+      font-size:1.17rem;
+    }
+
+    .label{
+      display:inline-block;
+      margin-bottom:10px;
+      padding:5px 10px;
+      border-radius:999px;
+      font-size:.77rem;
+      text-transform:uppercase;
+      letter-spacing:.7px;
+      color:#f5ead2;
+      background:rgba(95,136,166,.20);
+      border:1px solid rgba(200,167,91,.18);
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    .client{
+      margin:10px 0 12px;
+      padding:14px 16px;
+      background:rgba(255,255,255,.04);
+      border-left:4px solid var(--blue);
+      border-radius:14px;
+      color:#f7f3ea;
+    }
+
+    .focus,
+    .response{
+      margin-top:12px;
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.07);
+      background:rgba(255,255,255,.02);
+    }
+
+    .focus strong,
+    .response strong{
+      color:var(--gold2);
+    }
+
+    .protocol{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:18px;
+    }
+
+    .protocol .card ul,
+    .code-grid .card ul{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .protocol .card li,
+    .code-grid .card li{
+      margin-bottom:10px;
+    }
+
+    .code-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .checklist{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:12px;
+      margin-top:14px;
+    }
+
+    .check{
+      padding:12px 14px;
+      border-radius:16px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      color:var(--muted);
+    }
+
+    .footer{
+      padding:28px 0 46px;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    .footer .seal{
+      color:var(--gold2);
+      font-weight:700;
+      letter-spacing:.3px;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .protocol,
+      .cards,
+      .code-grid,
+      .checklist{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 640px){
+      .hero-grid{padding:22px}
+      .card{padding:18px}
+      .brand-text h1{font-size:1rem}
+      .brand-text p{font-size:.82rem}
+      .pill{font-size:.84rem;padding:9px 12px}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <a href="OTM.png"><img src="tn_OTM.png" width="35" height="53" alt="" title="" /></a>
+        <div class="brand-text">
+          <h1>Off The Mat</h1>
+          <p>Iyawo/1st Year Priest Consultation Practice Scenarios</p>
+        </div>
+      </div>
+
+      <nav class="pill-row" aria-label="Off The Mat(OTM) quick links">
+        <a class="pill" href="#protocol">Protocol</a>
+        <a class="pill" href="#scenarios">Scenarios</a>
+        <a class="pill" href="#roleplay">Assignment</a>
+        <a class="pill" href="#principles">Principles</a>
+        <a class="pill" href="#reflection">Reflection</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-card">
+          <div class="hero-grid">
+            <div>
+              <span class="eyebrow">OTM Training Page</span>
+              <h2><span class="accent">Iyawo Consultation</span> Practice Scenarios</h2>
+              <p>
+                A training page for Iyawos to practice sacred listening, disciplined response,
+                ethical restraint, healing-centered presence, and proper referral within the
+                framework of  1) Know Thyself, 2) Cleanse and Purify or 3) Living in Alignment with 
+                Absoulute Truth. The same way as Iyawos, you manuvered through challenges as initiates, so your success or 
+                challenges will persist.  DO YOU WORK!
+              </p>
+              <p>
+                Consultation is not performance. It is the careful work of
+                helping restore order, right relationship, and inner alignment while honoring
+                level, lineage, and the dignity of the person seeking guidance while <i>maintaining your own steady state</i>. Which of the three pillars are you currently working?
+                Which of the three pillars is presented?
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#scenarios">View Scenarios</a>
+                <a class="btn btn-ghost" href="#principles">Principles</a>
+              </div>
+            </div>
+
+            <aside class="hero-side">
+              <h2>Know Thyself</h2>
+              <ul>
+                <li>Listen for the whole person, not only the presenting concern.</li>
+                <li>Promote calm, truthfulness, and spiritual maturity.</li>
+                <li>Preserve dignity while reducing fear and confusion.</li>
+                <li>Honor elders, process, and rightful levels of authority.</li>
+                <li>Move toward healing, order, and right relationship.</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="protocol">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h3>Cleanse and Purify</h3>
+            <p> Clear, clean, cleanse and calm yourself, environment and everything present seen and unseen to best of your ability</p>
+            <p>Before an Iyawo responds, there must be stillness, listening, reverence, and respect for the healing process. SILENCE SUPPORTS SPIRIT</p>
+          </div>
+        </div>
+
+        <div class="protocol">
+          <article class="card">
+            <span class="label">Before Responding</span>
+            <h4>Inner Preparation</h4>
+            <ul>
+              <li>Pause and become inwardly settled.</li>
+              <li>Regulate breath, posture, and tone.</li>
+              <li>Listen without interrupting or rushing ahead.</li>
+              <li>Discern the true wound/misalignment beneath the first words.</li>
+              <li>Speak only after there is inward order.</li>
+              <li>Remain within Iyawo/1st year priest measure and authority.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="label">Must Not</span>
+            <h4>Protective Boundaries</h4>
+            <ul>
+              <li>Do not speak final outcomes carelessly. Do not over talk the consult. SPIRIT DOES THE CONSULTATION NOT YOU!</li>
+              <li>Do not intensify fear with dramatic spiritual claims.</li>
+              <li>Do not replace medical, legal, or mental health support.</li>
+              <li>Do not speak from ego, display, or personal need.</li>
+              <li>Do not confuse emotional heat with spiritual certainty.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="label">Should Do</span>
+            <h4>Healthy Iyawo Response</h4>
+            <ul>
+              <li>Clarify the question into preferably yes/no before offering direction.</li>
+              <li>Stabilize the person and yourself emotionally.</li>
+              <li>Support truth, reflection, and accountability.</li>
+              <li>Encourage healing and right relationship with Know Thyself, Cleanse and Purify or Living in Alignment with Absolute Truth.</li>
+              <li>Refer upward when the matter exceeds Iyawo scope.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="scenarios">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h3>Living in Alignment With Absolute Truth</h3>
+            <p>Use these scenarios for role-play, journaling, elder-led instruction, or live training exercises. Each scenario includes a concern, a healing focus, and a model response. 
+</p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <span class="label">Scenario 1</span>
+            <h4>Relationship Distress</h4>
+            <div class="client"><strong>Client:</strong> “I need to know whether this person is truly for me. We keep breaking up and returning to each other.”</div>
+            <div class="focus"><strong>Practice Focus:</strong> Slowing emotional urgency, distinguishing attachment from clarity, and bringing the person back to self-examination.</div>
+            <div class="response"><strong>Model Response:</strong> “Let us bring calm to this first. Repetition in a relationship may reveal unresolved patterns and not necessarily sacred confirmation. The deeper work is to understand what keeps recreating the cycle.”</div>
+          </article>
+
+          <article class="card">
+            <span class="label">Scenario 2</span>
+            <h4>Fear Around Illness</h4>
+            <div class="client"><strong>Client:</strong> “I feel weak and sick. I think I’m under spiritual attack.”</div>
+            <div class="focus"><strong>Practice Focus:</strong> Whole life healing, safety, grounded care, and refusing false either-or thinking.</div>
+            <div class="response"><strong>Model Response:</strong> “Your physical condition deserves proper care and attention first. Not every hardship should be interpreted as attack. Once your health is responsibly addressed, deeper spiritual reflection may be approached with greater balance.”</div>
+          </article>
+
+          <article class="card">
+            <span class="label">Scenario 3</span>
+            <h4>Money Disorder</h4>
+            <div class="client"><strong>Client:</strong> “Money keeps leaving me. I think someone crossed me.”</div>
+            <div class="focus"><strong>Practice Focus:</strong> Order, accountability, and examining practical disorder before assigning blame.</div>
+            <div class="response"><strong>Model Response:</strong> “We should look at the practical structure of the situation as well as the spiritual concern. Loss can come from disorder, poor timing, or lack of alignment. Let us first understand the pattern rather than rushing to an enemy conclusion.”</div>
+          </article>
+
+          <article class="card">
+            <span class="label">Scenario 4</span>
+            <h4>Family Separation</h4>
+            <div class="client"><strong>Client:</strong> “My sister and I do not speak anymore. I want to know who is wrong.”</div>
+            <div class="focus"><strong>Practice Focus:</strong> Right relationship, healing over blame, and neutrality.</div>
+            <div class="response"><strong>Model Response:</strong> “The first question may not be who is wrong, but what has been broken between you. Healing usually requires truth, responsibility, and willingness on more than one side.”</div>
+          </article>
+
+          <article class="card">
+            <span class="label">Scenario 5</span>
+            <h4>Dream of an Ancestor</h4>
+            <div class="client"><strong>Client:</strong> “I saw my ancestor in a dream. Tell me what it means.”</div>
+            <div class="focus"><strong>Practice Focus:</strong> Reverence, patience, and careful gathering of context.</div>
+            <div class="response"><strong>Model Response:</strong> “Dreams should be approached with reverence and care. Before assigning meaning, we should understand the details of the dream, how it felt, and what was happening in your life when it came.”</div>
+          </article>
+
+          <article class="card">
+            <span class="label">Scenario 6</span>
+            <h4>Pressure for a Quick Answer</h4>
+            <div class="client"><strong>Client:</strong> “Just tell me yes or no. Should I move next month?”</div>
+            <div class="focus"><strong>Practice Focus:</strong> Refusing reductionism and honoring the weight of transition.</div>
+            <div class="response"><strong>Model Response:</strong> “A move involves timing, readiness, purpose, and what surrounds the transition. A yes-or-no answer may feel satisfying in the moment, but greater clarity often requires deeper examination.”</div>
+          </article>
+
+          <article class="card">
+            <span class="label">Scenario 7</span>
+            <h4>Grief and Presence</h4>
+            <div class="client"><strong>Client:</strong> “My loved one just passed, and I feel them around me. Are they trying to speak to me?”</div>
+            <div class="focus"><strong>Practice Focus:</strong> Compassion, restraint, and protecting the grieving from spiritual overstatement.</div>
+            <div class="response"><strong>Model Response:</strong> “You are in a tender time, and strong feelings of presence may arise in grief. Let us approach this with reverence, patience, and care rather than forcing immediate conclusions.”</div>
+          </article>
+
+          <article class="card">
+            <span class="label">Scenario 8</span>
+            <h4>Fear of Opposition</h4>
+            <div class="client"><strong>Client:</strong> “People are jealous of me. Who is against me?”</div>
+            <div class="focus"><strong>Practice Focus:</strong> De-escalation, grounding, and redirecting attention toward alignment.</div>
+            <div class="response"><strong>Model Response:</strong> “It is wiser to strengthen your own order, clarity, and spiritual steadiness than to become centered on possible enemies. Healing begins when the mind is gathered rather than scattered.”</div>
+          </article>
+
+          <article class="card">
+            <span class="label">Scenario 9</span>
+            <h4>Seeking Spiritual Approval</h4>
+            <div class="client"><strong>Client:</strong> “I already made the decision. I just need spirit to confirm it.”</div>
+            <div class="focus"><strong>Practice Focus:</strong> Honesty, maturity, and not serving as a stamp of approval.</div>
+            <div class="response"><strong>Model Response:</strong> “Since the decision is already made, the more useful question may be how to move forward in truth, responsibility, and discipline from this point.”</div>
+          </article>
+
+          <article class="card">
+            <span class="label">Scenario 10</span>
+            <h4>Marriage Instability</h4>
+            <div class="client"><strong>Client:</strong> “My marriage is unstable. Is it spiritually over?”</div>
+            <div class="focus"><strong>Practice Focus:</strong> Respecting covenant, careful language, and referral when needed.</div>
+            <div class="response"><strong>Model Response:</strong> “That is a serious matter and should not be reduced to a quick declaration. It is better to understand what has changed, what remains possible, and what support may now be needed.”</div>
+          </article>
+
+          <article class="card">
+            <span class="label">Scenario 11</span>
+            <h4>Call to Priesthood</h4>
+            <div class="client"><strong>Client:</strong> “I think I am called to priesthood. Is that true?”</div>
+            <div class="focus"><strong>Practice Focus:</strong> Humility, process, and distinguishing calling from fascination.</div>
+            <div class="response"><strong>Model Response:</strong> “A calling is not proven by intensity of feeling alone. It is revealed over time through discipline, service, humility, right conduct, and the witness of elders.”</div>
+          </article>
+
+          <article class="card">
+            <span class="label">Scenario 12</span>
+            <h4>Chronic Crisis Pattern</h4>
+            <div class="client"><strong>Client:</strong> “Everything keeps going wrong. Every few days it’s a new emergency.”</div>
+            <div class="focus"><strong>Practice Focus:</strong> Pattern recognition, boundaries, and helping the person move from crisis to structure.</div>
+            <div class="response"><strong>Model Response:</strong> “We may need to look at the larger pattern instead of one emergency at a time. Often the deeper work is restoring structure, rhythm, and right order to daily life.”</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="roleplay">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h1>Assignment-Select five scenarios</h1>
+            <p> Determine which pillar, Know Thyself, Cleanse and Purify, or Living In Alignment with Absolute Truth best aligns with each scenario and explain your reasoning</p>
+          </div>
+        </div>
+
+        <div class="code-grid">
+          <article class="card">
+            <span class="label">3 Roles/Hits</span>
+            <h4>Training Structure</h4>
+            <ul>
+              <li><strong>Your Spirit:</strong> How is your Ori currently affected by your selected scenarios?.</li>
+              <li><strong>Your Body:</strong> What body temple responses are you experiencing while completing this assignment? Explain.</li>
+              <li><strong>Your Mind:</strong> 
+               Which Pillar does this overall assignment invoke for you now? Explain</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="label">Self Evaluation/Refraction (Not turned- for your records ONLY)</span>
+            <h4>What to Look For</h4>
+            <ul>
+              <li>Did I listen to my whole self?</li>
+              <li>Was my response to this assignment calming, dignifying and complete?</li>
+              <li>What did I not share that i experienced during this assignment but should have shared?</li>
+              <li>Am I complete with this assignment?</li>
+              <li>Do I need something else for completion?</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="principles">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h3>Principles for Consultation</h3>
+            <p>The Iyawo/1st year priest should embody healing presence, ethical speech, reverence for elders, and commitment to whole life balance.</p>
+          </div>
+        </div>
+
+        <div class="code-grid">
+          <article class="card">
+            <span class="label">Core Orientation</span>
+            <h4>Foundational Qualities</h4>
+            <ul>
+              <li><strong>Wholeness:</strong> see more than the immediate problem.</li>
+              <li><strong>Healing:</strong> seek restoration, not mere reaction.</li>
+              <li><strong>Discipline:</strong> speak with restraint, measure, and responsibility.</li>
+              <li><strong>Reverence:</strong> honor process, lineage, and sacred boundaries.</li>
+              <li><strong>Truthfulness:</strong> avoid exaggeration, projection, and spiritual theater.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="label">Guiding Ethos</span>
+            <h4>Consultation Commitments</h4>
+            <ul>
+              <li>Promote right relationship with self, others, elders, and spirit.</li>
+              <li>Move people toward order instead of confusion.</li>
+              <li>Hold dignity and compassion together.</li>
+              <li>Support inner alignment before outer action.</li>
+              <li>Understand that healing often unfolds through process.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reflection">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h3>After Assignment Checklist</h3>
+            <p>After assignment is turned in, revist each practice scenario, use these questions to sharpen healing discernment and maintain humility.</p>
+          </div>
+        </div>
+
+        <div class="checklist">
+          <div class="check">What was the deeper wound beneath the spoken concern?</div>
+          <div class="check">Can I identify a governing Orish for each Scenario?</div>
+          <div class="check">How might sex, age, race or marital status affect my interaction?</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="seal">SGI</p>
+      <p>Iyawo Consultation Practice Scenarios • </p>
+     </div>Supported by Sebek (+) Osa
+  </footer>
+
+</body>
+</html>
